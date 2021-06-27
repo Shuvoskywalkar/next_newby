@@ -14,7 +14,7 @@ const gotoDetails=(id)=>{
         <div >
                     {meetups.map(mu=>
 <div key={mu._id} className="HomeDecor">
-            <Image className="imaage"  src={mu.image} alt="nai re vai"/>
+            <img className="imaage"  src={mu.image} alt="nai re vai"/>
             <h4>{mu.title}</h4>
             <h2>{mu.address}</h2>
             <div className="display-flex" >
