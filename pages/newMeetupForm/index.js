@@ -4,7 +4,7 @@ import {useRouter} from 'next/router';
 
 import { Fragment } from 'react';
 import Head from 'next/head';
-const index = () => {
+const Index = () => {
     const router=useRouter();
 
     async function addMeetupHandler(addedData){
@@ -35,4 +35,4 @@ console.log(data)
     );
 };
 
-export default index;
+export default Index;

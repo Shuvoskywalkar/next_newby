@@ -19,7 +19,7 @@ const meetDetailsPage = (props) => {
           />
           </Head>
              <div style={{textAlign:"center",justifyContent:"center",marginTop:"12px"}}>
-             <img className="imaage"  src={meetData.picture} alt="nai re vai"/>
+             <Image className="imaage"  src={meetData.picture} alt="nai re vai"/>
              <br/>
 <small>{meetData.id}</small>
 <h1 >{meetData.title}</h1>
