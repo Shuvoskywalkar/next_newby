@@ -58,11 +58,11 @@ client.close()
       description:dta.description,
       address:dta.address,
       _id:dta._id.toString(),
-      title:dta.title
-    }))
+      title:dta.title,
+    })),
   },
-  revalidate:10
-}
+  revalidate:1,
+};
 } 
 
 //getServerSideProps()
