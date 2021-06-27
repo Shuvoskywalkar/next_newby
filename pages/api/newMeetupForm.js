@@ -13,7 +13,9 @@ const{title,address,description,image}=data
    const db=client.db()
    const Collection=db.collection('meetUpsOnly');
    Collection.insertOne(data)
-   .then(result=>{console.log(result);res.send(result.insertedCount>0)})
+   .then(result=>{
+    //    console.log(result);
+       res.send(result.insertedCount>0)})
    .catch(err=>console.log(err))
    client.close();
 }

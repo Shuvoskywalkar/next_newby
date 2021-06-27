@@ -11,7 +11,7 @@ async function getData(req,res){
      Collection.find({})
     .toArray((err,documets)=>{
         res.send(documets)
-        console.log(documets)
+        // console.log(documets)
     })
     client.close();
 // }

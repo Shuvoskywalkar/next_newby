@@ -53,7 +53,7 @@ const data= await Collection.find({}).toArray();
 client.close()
  return{
    props:{
-    meetupPlaces:data.map(dta=>({
+    meetupPlaces:data.map((dta)=>({
       image:dta.image,
       description:dta.description,
       address:dta.address,

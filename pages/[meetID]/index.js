@@ -53,7 +53,7 @@ const client= await MongoClient.connect("mongodb+srv://next_newby:newby2021@clus
   const Collection=db.collection('meetUpsOnly');
 
   const Data=await Collection.findOne({_id:ObjectId(meetID)});
-  console.log(Data)
+  // console.log(Data)
   client.close();
 return{
     props:{
