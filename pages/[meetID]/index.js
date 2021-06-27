@@ -41,7 +41,7 @@ export async function getStaticPaths(){
   // console.log(Data)
    client.close();
     return{
-    fallback:false,
+    fallback:'blocking',
     paths:Data.map((dta)=>({params:{meetID:dta._id.toString()},}))
 ,}
 }
