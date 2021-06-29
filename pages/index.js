@@ -61,7 +61,7 @@ client.close()
       title:dta.title,
     })),
   },
-  revalidate:1,
+  revalidate:12,
 };
 } 
 
