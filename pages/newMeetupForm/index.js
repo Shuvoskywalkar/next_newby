@@ -15,11 +15,13 @@ const Index = () => {
     });
     const data = await response.json();
 
-console.log(data)
-        // console.log("booom");
-        // console.log(addedData)
 
-    router.push('/')
+    if (data!==null) {
+     
+console.log(data)
+
+router.push('/')   
+    }
     }
     return (
 <Fragment>      
