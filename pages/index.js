@@ -1,13 +1,14 @@
 //our-domain.com/
 import React from 'react';
 import MongoClient from 'mongodb';
-
 import Home from '../Components/Homepage/Home';
 
 import { Fragment } from 'react';
 import Head from 'next/head';
 function HomePage(props){
+
   // console.log(props)
+
   return  <Fragment>
   <Head>
     <title>Meeting up with NEXT JS</title>
@@ -16,23 +17,23 @@ function HomePage(props){
     content="ahhh relife relife finally,Great day at work"
     />
   </Head>
-  <Home meetups={props.meetupPlaces}/>
+  <Home meetups={props.meetupPlaces} deleteMeetup={deleteMeetup} />
   </Fragment>
   }
 
-//getStaticProps()
+
+  async function deleteMeetup(id) {
+ const response = await fetch(`/api/${id}`,{
+   method:"DELETE",
+   body:id
+ })
+
+ const result= await response.json();
+ console.log(result)
 
 
-//     async function handler(){
+}  
 
-//       const response = await fetch('/api/Meetups');
-//       const Data = await response.json();
-// return Data 
-//    }
-
-   
-// const MeuP=handler();
-// console.log(MeuP);
 
 export async function getStaticProps(){
   
@@ -61,22 +62,32 @@ client.close()
       title:dta.title,
     })),
   },
-  revalidate:12,
+  revalidate:10,
 };
 } 
 
 //getServerSideProps()
 
 // export async function getServerSideProps(context){
-// const req=context.req,
-// const res=context.res
-//   //fetch data from an API
-//  return{
-//    props:{
-//     meetupPlaces:meetups
-//   },
-//   revalidate:10
+
+    // const client= await MongoClient.connect("mongodb+srv://next_newby:newby2021@cluster0.wyaqz.mongodb.net/MeetupDatabase?retryWrites=true&w=majority")
+    // const db=client.db()
+    // const Collection=db.collection('meetUpsOnly');
+
+    
+    // const deletedItem= await Collection.deleteOne({_id:ObjectId(id)})
+    // console.log(deletedItem.deletedCount)
 // }
 // }
 
+//   async function deleter(id){
+// console.log(id)
+    // const client= await MongoClient.connect("mongodb+srv://next_newby:newby2021@cluster0.wyaqz.mongodb.net/MeetupDatabase?retryWrites=true&w=majority")
+    // const db=client.db()
+    // const Collection=db.collection('meetUpsOnly');
+
+    
+    // const deletedItem= await Collection.deleteOne({_id:ObjectId(id)})
+    // console.log(deletedItem.deletedCount)
+  // }
 export default HomePage;

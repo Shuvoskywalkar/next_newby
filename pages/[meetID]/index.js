@@ -31,6 +31,7 @@ const meetDetailsPage = (props) => {
 };
 
 
+
 export async function getStaticPaths(){
  
   const client= await MongoClient.connect("mongodb+srv://next_newby:newby2021@cluster0.wyaqz.mongodb.net/MeetupDatabase?retryWrites=true&w=majority")
@@ -45,6 +46,12 @@ export async function getStaticPaths(){
     paths:Data.map((dta)=>({params:{meetID:dta._id.toString()},}))
 ,}
 }
+
+
+
+
+
+
 
 export async function getStaticProps (context){
 const meetID=context.params.meetID;
